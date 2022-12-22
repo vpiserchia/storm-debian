@@ -14,6 +14,58 @@ Using this repository, you will be able to have an Apache Strom debian package f
 
 ```deb-automate-build.sh```
 
+### Debian packages overview
+
+The script automate the creation of several packages:
+
+```
+grep Package debian/control
+
+Package: storm
+Package: storm-doc
+Package: storm-common
+Package: storm-ui
+Package: storm-nimbus
+Package: storm-supervisor
+Package: storm-logviewer
+Package: storm-drpc
+Package: storm-tools
+```
+
+#### Storm Package
+
+This is a meta package that depends on the essential packages required for storm.
+
+#### Storm-common Package
+
+This package contains the files required by all other storm packages.
+
+#### Storm-doc Package
+
+This package contains documentation and examples of Apache Storm usage.
+
+
+#### Storm-ui Package
+
+This package contains the init scripts to run storm ui.
+
+#### Storm-supervisor Package
+
+This package contains the init scripts to run storm supervisor.
+
+
+### Storm-logviewer Package
+
+This package contains the init scripts to run storm logviewer.
+
+### Storm-drpc Package
+
+This package contains the init scripts to run storm drpc.
+
+### Storm-tools Package
+
+This package contains the init scripts and libraries to run storm tools (sql, storm-kafka-monitor, submit-     tools).
+
 ## Installing the Storm debian packages
 
 After the build is completed, it's as simple as:
