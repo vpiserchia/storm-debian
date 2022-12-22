@@ -1,0 +1,13 @@
+/var/log/storm/drpc.log
+/var/log/storm/drpc.log.metrics
+/var/log/storm/access-drpc.log
+/var/log/storm/access-web-drpc.log
+{
+    rotate 1
+    size 100M
+    missingok
+    notifempty
+    postrotate
+        /usr/lib/rsyslog/rsyslog-rotate
+    endscript
+}

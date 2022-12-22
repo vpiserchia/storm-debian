@@ -1,0 +1,13 @@
+/var/log/storm/nimbus.log
+/var/log/storm/nimbus.log.metrics
+/var/log/storm/access-nimbus.log
+/var/log/storm/access-web-nimbus.log
+{
+    rotate 1
+    size 100M
+    missingok
+    notifempty
+    postrotate
+        /usr/lib/rsyslog/rsyslog-rotate
+    endscript
+}

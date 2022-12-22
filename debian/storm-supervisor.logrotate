@@ -1,0 +1,13 @@
+/var/log/storm/supervisor.log
+/var/log/storm/supervisor.log.metrics
+/var/log/storm/access-supervisor.log
+/var/log/storm/access-web-supervisor.log
+{
+    rotate 1
+    size 100M
+    missingok
+    notifempty
+    postrotate
+        /usr/lib/rsyslog/rsyslog-rotate
+    endscript
+}
