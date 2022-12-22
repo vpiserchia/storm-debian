@@ -1,0 +1,2 @@
+d /var/lib/storm 0755 storm storm -
+d /var/log/storm 0755 storm storm -

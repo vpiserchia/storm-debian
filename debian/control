@@ -1,0 +1,111 @@
+Source: apache-storm
+Section: net
+Priority: extra
+Maintainer: Michael Pershyn <michael.pershyn@gmail.com>
+Build-Depends: debhelper (>= 12), default-jre | default-jdk, wget
+Standards-Version: 3.9.1
+
+Package: storm
+Architecture: all
+Depends: storm-common (= ${binary:Version}), logrotate, cron, systemd
+Recommends: storm-ui, storm-nimbus, storm-supervisor, storm-logviewer, storm-drpc
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This is a meta package that depends on the essential packages required for
+ storm.
+
+Package: storm-doc
+Architecture: all
+Depends: storm-common (= ${binary:Version})
+Recommends: storm-ui, storm-nimbus, storm-supervisor, storm-logviewer, storm-drpc
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains documentation and examples of Apache Storm usage.
+
+Package: storm-common
+Architecture: all
+Depends: default-jre-headless, python3, python-is-python3, systemd
+Conflicts: apache-storm
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the files required by all other storm packages.
+
+Package: storm-ui
+Architecture: all
+Depends: storm-common (= ${binary:Version}), systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts and webapp libraries to run storm ui.
+
+Package: storm-nimbus
+Architecture: all
+Depends: storm-common (= ${binary:Version}), logrotate, cron, systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts to run storm nimbus.
+
+Package: storm-supervisor
+Architecture: all
+Depends: storm-common (= ${binary:Version}), systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts to run storm supervisor.
+
+Package: storm-logviewer
+Architecture: all
+Depends: storm-common (= ${binary:Version}), systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts to run storm logviewer.
+
+Package: storm-drpc
+Architecture: all
+Depends: storm-common (= ${binary:Version}), systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts to run storm drpc.
+
+Package: storm-tools
+Architecture: all
+Depends: storm-common (= ${binary:Version}), systemd
+Description: Apache Storm is a distributed realtime computation system
+ Similar to how Apache Hadoop provides a set of general primitives for doing batch processing.
+ Apache Storm provides a set of general primitives for doing realtime computation.
+ Apache Storm is simple, can be used with any programming language,
+ is used by many companies, and is a lot of fun to use!
+ .
+ This package contains the init scripts and libraries to run storm tools (sql, storm-kafka-monitor, submit-tools).
+
+

@@ -1,0 +1,18 @@
+# Storm configuration
+
+STORM_CONF_DIR=/etc/storm
+
+# The java implementation to use. If JAVA_HOME is not found we expect java to be in path
+#JAVA_HOME=
+
+# JVM options to be used in "storm jar" commad
+#STORM_JAR_JVM_OPTS=
+
+# Storm External Libraries Classpath
+#STORM_EXT_CLASSPATH=
+
+# Storm External Classpath Daemon
+#STORM_EXT_CLASSPATH_DAEMON=
+
+# Storm Supervisor log file
+#STORM_SUPERVISOR_LOG_FILE=supervisor.log

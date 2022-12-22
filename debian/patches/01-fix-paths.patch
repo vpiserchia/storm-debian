@@ -1,0 +1,39 @@
+diff -ruN a/bin/storm b/bin/storm
+--- a/bin/storm	2022-12-22 16:09:30.411688706 +0100
++++ b/bin/storm	2022-12-22 16:14:04.231799244 +0100
+@@ -45,8 +45,7 @@
+   exit 1
+ fi
+ 
+-STORM_BIN_DIR=`dirname ${PRG}`
+-export STORM_BASE_DIR=`cd ${STORM_BIN_DIR}/..;pwd`
++STORM_BIN_DIR=/usr/lib/storm/bin
+ 
+ #check to see if the conf dir or file is given as an optional argument
+ if [ $# -gt 1 ]; then
+@@ -64,8 +63,8 @@
+   fi
+ fi
+ 
+-export STORM_CONF_DIR="${STORM_CONF_DIR:-$STORM_BASE_DIR/conf}"
+-export STORM_CONF_FILE="${STORM_CONF_FILE:-$STORM_BASE_DIR/conf/storm.yaml}"
++export STORM_CONF_DIR="${STORM_CONF_DIR:-/etc/storm}"
++export STORM_CONF_FILE="${STORM_CONF_FILE:-/etc/storm/storm.yaml}"
+ 
+ if [ -f "${STORM_CONF_DIR}/storm-env.sh" ]; then
+   . "${STORM_CONF_DIR}/storm-env.sh"
+diff -ruN a/bin/storm-kafka-monitor b/bin/storm-kafka-monitor
+--- a/bin/storm-kafka-monitor	2022-12-22 16:09:30.411688706 +0100
++++ b/bin/storm-kafka-monitor	2022-12-22 16:14:55.872573173 +0100
+@@ -30,9 +30,9 @@
+   fi
+ done
+ 
+-STORM_BIN_DIR=`dirname ${PRG}`
++STORM_BIN_DIR=/usr/lib/storm/bin
+ export STORM_BASE_DIR=`cd ${STORM_BIN_DIR}/..;pwd`
+-export STORM_CONF_DIR="${STORM_CONF_DIR:-$STORM_BASE_DIR/conf}"
++export STORM_CONF_DIR="${STORM_CONF_DIR:-/etc/storm}"
+ 
+ if [ -f "${STORM_CONF_DIR}/storm-env.sh" ]; then
+   . "${STORM_CONF_DIR}/storm-env.sh"

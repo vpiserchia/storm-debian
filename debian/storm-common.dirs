@@ -1,0 +1,3 @@
+var/log/storm
+var/lib/storm/storm-local
+usr/lib/storm/storm_rocks

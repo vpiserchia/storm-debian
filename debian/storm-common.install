@@ -1,0 +1,14 @@
+bin/storm usr/lib/storm/bin
+bin/storm.py usr/lib/storm/bin
+conf/storm.yaml etc/storm/
+
+conf/storm-env.sh usr/lib/storm/bin
+
+lib usr/lib/storm/
+extlib usr/lib/storm/
+extlib-daemon usr/lib/storm/
+log4j2 usr/lib/storm/
+
+# licenses
+licenses usr/share/storm/doc/
+# init scripts are managed by rules

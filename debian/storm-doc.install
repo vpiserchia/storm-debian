@@ -1,0 +1,2 @@
+examples usr/share/doc/storm/
+conf/seccomp.json.example usr/share/doc/storm/

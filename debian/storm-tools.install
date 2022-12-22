@@ -1,0 +1,2 @@
+bin/storm-kafka-monitor  usr/lib/storm/bin
+lib-tools usr/lib/storm/
