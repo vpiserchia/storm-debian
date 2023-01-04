@@ -1,7 +1,7 @@
 Source: apache-storm
 Section: net
 Priority: extra
-Maintainer: Michael Pershyn <michael.pershyn@gmail.com>
+Maintainer: Vito Piserchia <vpiserchia@gmail.com>
 Build-Depends: debhelper (>= 12), default-jre | default-jdk, wget
 Standards-Version: 3.9.1
 
