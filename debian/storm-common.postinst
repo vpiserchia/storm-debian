@@ -1,13 +1,39 @@
 #!/bin/sh
 set -e
 
-# log files should be writable by storm user
-chown -R storm:storm /var/log/storm
+NAME="storm"
+GROUP=$NAME
+DATADIR="/var/lib/storm"
 
-# storm.local.dir should also be writable by storm user
-chown storm:storm /var/lib/storm
-chown storm:storm /var/lib/storm/storm-local
-chown storm:storm /var/lib/storm/storm_rocks
+# shamelessly copied from debian mysql-server package...
+if ! getent group $GROUP >/dev/null ; then
+        # Adding system group
+        addgroup --system $GROUP >/dev/null
+fi
+
+# creating storm user if it isn't already there
+if ! getent passwd $NAME >/dev/null ; then
+        # Adding system user
+        adduser \
+          --system \
+          --disabled-login \
+          --ingroup $GROUP \
+          --home $DATADIR \
+          --gecos "Storm distributed realtime computation system" \
+          --shell /bin/false \
+          $NAME  >/dev/null
+fi
+
+chown $NAME:$GROUP /var/log/$NAME
+chown $NAME:$GROUP /var/lib/$NAME
+chmod o-rwx /var/lib/$NAME
+
+echo "Making sure storm user is unlocked"
+if [ -f /etc/shadow ]; then
+  usermod -U -e '' $NAME
+else
+  usermod -U $NAME
+fi
 
 #DEBHELPER#
 

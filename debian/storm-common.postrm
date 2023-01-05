@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+NAME="storm"
+GROUP=$NAME
+
+# shamelessly copied from debian mysql-server package...
+#
+# - Remove the storm user only after all his owned files are purged.
+#   
+if [ "$1" = "purge" ]; then
+  # we remove the storm user only after all his owned files are purged
+  rm -rf /var/lib/$NAME
+  rm -rf /var/log/$NAME
+  rm -rf /var/run/$NAME
+
+  deluser --system --remove-home $NAME || true
+  delgroup --system --only-if-empty $GROUP || true
+fi
+
+#DEBHELPER#
